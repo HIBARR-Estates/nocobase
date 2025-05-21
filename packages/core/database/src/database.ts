@@ -251,7 +251,20 @@ export class Database extends EventEmitter implements AsyncEmitter {
       },
     );
 
-    const sequelizeOptions = this.sequelizeOptions(this.options);
+    const sequelizeOptions = {
+      dialect: 'mysql', //    ^|^e Must be a string
+      host: process.env.DB_HOST,
+      port: Number(process.env.DB_PORT),
+      database: process.env.DB_DATABASE,
+      username: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      timezone: process.env.TZ || 'UTC',
+      dialectOptions: {
+        ssl: {
+          rejectUnauthorized: false,
+        },
+      },
+    };
     this.sequelize = new Sequelize(sequelizeOptions);
 
     this.queryInterface = buildQueryInterface(this);

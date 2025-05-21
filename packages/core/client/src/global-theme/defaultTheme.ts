@@ -13,8 +13,8 @@ const defaultTheme: ThemeConfig = {
   name: '',
   token: {
     // 顶部导航栏
-    colorPrimaryHeader: '#001529',
-    colorBgHeader: '#001529',
+    colorPrimaryHeader: '#053160',
+    colorBgHeader: '#053160',
     colorBgHeaderMenuHover: '#ffffff1a',
     colorBgHeaderMenuActive: '#ffffff1a',
     colorTextHeaderMenu: '#ffffffa6',
